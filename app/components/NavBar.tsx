@@ -41,10 +41,15 @@ const isAuthenticated = !!user;
       {user ? (
         <div className="flex items-center justify-between gap-4">
           <span>{user.given_name}</span>
-          <LogoutLink className={buttonVariants()}>Logout</LogoutLink>
+          <LogoutLink
+            className={buttonVariants()}
+            postLogoutRedirectURL="https://blog-site-delta-ruddy.vercel.app"
+          >
+            Logout
+          </LogoutLink>
         </div>
       ) : (
-        <AuthButtons isAuthenticated={isAuthenticated}/>
+        <AuthButtons isAuthenticated={isAuthenticated} />
       )}
     </nav>
   );
